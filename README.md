@@ -19,8 +19,8 @@ containers:
 Install the [AWS CLI](https://aws.amazon.com/cli/).
 
 run
-       
-```
+
+```bash
 asw configure
 
 AWS Access Key ID [None]: 123
@@ -55,3 +55,8 @@ once you have uploaded your file (you should get a 200)
 Select `Get image` request and execute.
 
 You should see your image in postman
+
+Source:
+
+- [How to fake AWS locally with LocalStack](https://dev.to/goodidea/how-to-fake-aws-locally-with-localstack-27me)
+- [Testing file uploads to AWS S3 with IAM user credentials in Postman](https://medium.com/@christinavhastenrath/testing-file-uploads-to-aws-s3-with-iam-user-credentials-in-postman-5026fbde3ca6)
