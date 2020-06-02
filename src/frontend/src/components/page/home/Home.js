@@ -1,12 +1,19 @@
 import React from "react";
 import NavBar from "../../base/navbar/NavBar";
+import Uploader from "../../base/uploader/Uploader";
 
 export default function Home() {
   return (
     <>
       <NavBar />
-      <p>Welcome</p>
-      <span>THis is a test.</span>
+      <br />
+      <h2>NTT Data Secure File Upload</h2>
+      <span>Testing</span>
+
+      {/* file uploader */}
+      <div>
+        <Uploader />
+      </div>
     </>
   );
 }

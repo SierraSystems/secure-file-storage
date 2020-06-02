@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots NavBar default 1`] = `
+exports[`NavBar Component renders as expected 1`] = `
 <div
   className="nav-div"
 >
@@ -22,20 +22,5 @@ exports[`Storyshots NavBar default 1`] = `
       </ul>
     </div>
   </nav>
-</div>
-`;
-
-exports[`Storyshots Uploader default 1`] = `
-<div
-  className="App"
->
-  <div
-    className="filepond--wrapper"
-  >
-    <input
-      multiple={true}
-      type="file"
-    />
-  </div>
 </div>
 `;
