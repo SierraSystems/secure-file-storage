@@ -38,7 +38,7 @@ jobs:
         working-directory: src/frontend
       - run: yarn build
         working-directory: src/frontend
-      - uses: paambaati/codeclimate-action@v2.2.4
+      - uses: paambaati/codeclimate-action@v2.6.0
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         with:
