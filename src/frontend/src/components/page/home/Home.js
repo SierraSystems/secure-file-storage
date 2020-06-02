@@ -1,25 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
-import "../page.css";
-import Header from "../../base/header/Header";
+import NavBar from "../../base/navbar/NavBar";
 
-export default function Home({ page: { header } }) {
+export default function Home() {
   return (
-    <main>
-      <Header header={header} />
-      <div className="page">
-        <div className="content col-md-10">
-          <p>Welcome to the NTT Data Secure File Upload App!</p>
-        </div>
-      </div>
-    </main>
+    <>
+      <NavBar />
+      <p>Welcome</p>
+    </>
   );
 }
-
-Home.propTypes = {
-  page: PropTypes.shape({
-    header: PropTypes.shape({
-      name: PropTypes.string.isRequired
-    }).isRequired
-  }).isRequired
-};
