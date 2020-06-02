@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Uploader Component renders as expected 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="filepond--wrapper"
+  >
+    <input
+      multiple={true}
+      type="file"
+    />
+  </div>
+</div>
+`;
