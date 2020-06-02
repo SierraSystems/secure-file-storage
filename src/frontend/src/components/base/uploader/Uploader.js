@@ -22,7 +22,7 @@ export default function Uploader() {
     <div className="App">
       <FilePond
         files={files}
-        allowMultiple={true}
+        allowMultiple
         onupdatefiles={setFiles}
         labelIdle='Drag and Drop your files or <span class="filepond--label-action">Browse</span>'
       />
