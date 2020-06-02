@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "2c365e05-72dc-46d1-b8b3-20bbce4ab434",
+		"name": "secure-file-storage",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Upload a file",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8056/store/demo-bucket/test.png",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8056",
+					"path": [
+						"store",
+						"demo-bucket",
+						"test.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List buckets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8056/store/demo-bucket/test.png",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8056",
+					"path": [
+						"store",
+						"demo-bucket",
+						"test.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8056/store/demo-bucket/test.png",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8056",
+					"path": [
+						"store",
+						"demo-bucket",
+						"test.png"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "awsv4",
+		"awsv4": [
+			{
+				"key": "secretKey",
+				"value": "xyz",
+				"type": "string"
+			},
+			{
+				"key": "accessKey",
+				"value": "123",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3a6f4699-7b6e-48b2-84f0-124b8ee295c3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d02e68a7-a9bd-4da5-b84d-7929dfdaaf89",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
