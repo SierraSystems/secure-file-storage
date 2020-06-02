@@ -42,5 +42,4 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         with:
-          coverageCommand: yarn coverage
-          working-directory: src/frontend
+          coverageCommand: yarn --cwd /home/runner/work/secure-file-storage/secure-file-storage/src/frontend coverage
