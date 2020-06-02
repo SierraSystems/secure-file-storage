@@ -43,3 +43,4 @@ jobs:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         with:
           coverageCommand: yarn --cwd /home/runner/work/secure-file-storage/secure-file-storage/src/frontend coverage
+          coverageLocations: ${{github.workspace}}/src/frontend/coverage/test-report.xml
