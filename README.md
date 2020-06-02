@@ -21,7 +21,7 @@ Install the [AWS CLI](https://aws.amazon.com/cli/).
 run
 
 ```bash
-asw configure
+aws configure
 
 AWS Access Key ID [None]: 123
 AWS Secret Access Key [None]: xyz
