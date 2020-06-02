@@ -8,7 +8,6 @@ export default function Home() {
       <NavBar />
       <br />
       <h2>NTT Data Secure File Upload</h2>
-      <span>Testing</span>
 
       {/* file uploader */}
       <div>
