@@ -1,6 +1,7 @@
 import React from "react";
 import { Collapse, Navbar, Nav, NavbarText } from "reactstrap";
 import "./NavBar.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 export default function NavBar() {
   return (
