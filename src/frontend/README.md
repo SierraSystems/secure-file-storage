@@ -8,7 +8,7 @@ In the project directory (`frontend`), you can run:
 
 ### `docker-compose up -d --build`
 
-Builds the image and fires up the container. Just running this single command will install all required dependencies and start up the application on port 3000.
+Builds the image and fires up the container. Just running this single command will install all required dependencies and start up the application on port 3000. The dockerized frontend container should have chokidar polling enabled for live reload.
 
 ### `docker-compose stop`
 
