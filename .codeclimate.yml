@@ -1,6 +1,2 @@
 exclude_patterns:
-  - "src/frontend/src/App.js"
-  - "src/frontend/src/AssetsTransformer.js"
-  - "src/frontend/src/serviceWorker.js"
-  - "src/frontend/src/index.js"
-  - "src/frontend/src/setupTests.js"
+  - "src/frontend/src/*.js"
