@@ -1,6 +1,6 @@
 import renderer from "react-test-renderer";
 
-export function generateSnapshotTree(component) {
+export default function generateSnapshotTree(component) {
   const model = renderer.create(component);
   const tree = model.toJSON();
 
