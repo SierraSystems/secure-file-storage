@@ -1,9 +1,9 @@
 import React from "react";
-import Uploader from "./Uploader";
+import Home from "./Home";
 import testBasicSnapshot from "../../../TestHelper";
 
-describe("Uploader", () => {
+describe("Home", () => {
   test("Component renders as expected", () => {
-    testBasicSnapshot(<Uploader />);
+    testBasicSnapshot(<Home />);
   });
 });
