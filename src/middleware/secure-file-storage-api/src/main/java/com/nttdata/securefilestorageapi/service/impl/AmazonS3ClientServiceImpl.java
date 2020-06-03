@@ -26,17 +26,17 @@ import java.io.IOException;
 @Component
 public class AmazonS3ClientServiceImpl implements AmazonS3ClientService
 {
-    private String awsS3AudioBucket;
+    private String awsS3Bucket;
     private AmazonS3 amazonS3;
     private static final Logger logger = LoggerFactory.getLogger(AmazonS3ClientServiceImpl.class);
 
     @Autowired
-    public AmazonS3ClientServiceImpl(Region awsRegion, AWSCredentialsProvider awsCredentialsProvider, String awsS3AudioBucket)
+    public AmazonS3ClientServiceImpl(Region awsRegion, AWSCredentialsProvider awsCredentialsProvider, String awsS3Bucket)
     {
         this.amazonS3 = AmazonS3ClientBuilder.standard()
                 .withCredentials(awsCredentialsProvider)
                 .withRegion(awsRegion.getName()).build();
-        this.awsS3AudioBucket = awsS3AudioBucket;
+        this.awsS3Bucket = awsS3Bucket;
     }
 
     @Async
@@ -51,7 +51,7 @@ public class AmazonS3ClientServiceImpl implements AmazonS3ClientService
             fos.write(multipartFile.getBytes());
             fos.close();
 
-            PutObjectRequest putObjectRequest = new PutObjectRequest(this.awsS3AudioBucket, fileName, file);
+            PutObjectRequest putObjectRequest = new PutObjectRequest(this.awsS3Bucket, fileName, file);
 
             if (enablePublicReadAccess) {
                 putObjectRequest.withCannedAcl(CannedAccessControlList.PublicRead);
@@ -68,7 +68,7 @@ public class AmazonS3ClientServiceImpl implements AmazonS3ClientService
     public void deleteFileFromS3Bucket(String fileName)
     {
         try {
-            amazonS3.deleteObject(new DeleteObjectRequest(awsS3AudioBucket, fileName));
+            amazonS3.deleteObject(new DeleteObjectRequest(awsS3Bucket, fileName));
         } catch (AmazonServiceException ex) {
             logger.error("error [" + ex.getMessage() + "] occurred while removing [" + fileName + "] ");
         }
