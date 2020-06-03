@@ -1,9 +1,9 @@
 import React from "react";
 import Home from "./Home";
-import generateSnapshotTree from "../../../TestHelper";
+import testBasicSnapshot from "../../../TestHelper";
 
 describe("Home", () => {
   test("Component renders as expected", () => {
-    expect(generateSnapshotTree(<Home />)).toMatchSnapshot();
+    testBasicSnapshot(<Home />);
   });
 });

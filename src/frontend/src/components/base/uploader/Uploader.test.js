@@ -1,9 +1,9 @@
 import React from "react";
 import Uploader from "./Uploader";
-import generateSnapshotTree from "../../../TestHelper";
+import testBasicSnapshot from "../../../TestHelper";
 
 describe("Uploader", () => {
   test("Component renders as expected", () => {
-    expect(generateSnapshotTree(<Uploader />)).toMatchSnapshot();
+    testBasicSnapshot(<Uploader />);
   });
 });

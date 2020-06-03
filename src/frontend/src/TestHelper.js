@@ -1,8 +1,8 @@
 import renderer from "react-test-renderer";
 
-export default function generateSnapshotTree(component) {
+export default function testBasicSnapshot(component) {
   const model = renderer.create(component);
   const tree = model.toJSON();
 
-  return tree;
+  expect(tree).toMatchSnapshot();
 }
