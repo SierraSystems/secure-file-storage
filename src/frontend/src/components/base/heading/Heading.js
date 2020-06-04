@@ -4,9 +4,11 @@ import "bootstrap/dist/css/bootstrap.css";
 
 export default function Heading() {
   return (
-    <div class="spacing">
-      <h1 class="sub-heading head">Welcome to Secure File Upload & Storage</h1>
-      <p class="text head">
+    <div className="spacing">
+      <h1 className="sub-heading head">
+        Welcome to Secure File Upload & Storage
+      </h1>
+      <p className="text head">
         The Secure File Upload & Storage allows you to securely upload and store
         files on an S3 compatible storage bucket.
       </p>

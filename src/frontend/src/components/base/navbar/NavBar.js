@@ -7,12 +7,13 @@ export default function NavBar() {
     <div className="blue">
       <div className="spacing">
         <nav className="navbar navbar-expand-md sticky-top">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="https://ca.nttdata.com/en/">
+          <div className="container-fluid">
+            <a className="navbar-brand" href="https://ca.nttdata.com/en/">
               <img
                 src={`${process.env.PUBLIC_URL}/images/s3.svg`}
                 height="40px"
                 width="55px"
+                alt="s3 logo"
               />
             </a>
           </div>
