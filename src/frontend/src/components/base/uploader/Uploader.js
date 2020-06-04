@@ -51,7 +51,7 @@ export default function Uploader() {
   };
 
   return (
-    <div className="App">
+    <div className="spacing" style={{ width: "60%", margin: "auto" }}>
       <FilePond
         files={files}
         allowMultiple

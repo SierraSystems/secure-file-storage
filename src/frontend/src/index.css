@@ -2,9 +2,17 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  font-family: "Catamaran";
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.spacing {
+  padding-left: 12%;
+  padding-right: 12%;
+  overflow: auto;
 }

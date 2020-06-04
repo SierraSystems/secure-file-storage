@@ -1,0 +1,17 @@
+.head {
+  padding-left: 40px;
+  margin-right: 25px;
+}
+
+.sub-heading {
+  padding-top: 35px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.text {
+  padding-top: 15px;
+  max-width: 90%;
+}

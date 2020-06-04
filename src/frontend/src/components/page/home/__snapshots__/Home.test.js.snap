@@ -3,43 +3,79 @@
 exports[`Home Component renders as expected 1`] = `
 Array [
   <div
-    className="nav-div"
+    className="blue"
   >
-    <nav
-      className="navbar navbar-expand-md"
+    <div
+      className="spacing"
     >
-      <div
-        className="collapse show navbar-collapse"
-        style={Object {}}
+      <nav
+        className="navbar navbar-expand-md sticky-top"
       >
-        <ul
-          className="mr-auto navbar-nav"
+        <div
+          class="container-fluid"
         >
-          <span
-            className="navbar-text"
+          <a
+            class="navbar-brand"
+            href="https://ca.nttdata.com/en/"
           >
-            Secure File Upload
-          </span>
-        </ul>
-      </div>
-    </nav>
+            <img
+              height="40px"
+              src="undefined/images/s3.svg"
+              width="55px"
+            />
+          </a>
+        </div>
+        <a
+          className="links"
+          href="https://ca.nttdata.com/en/"
+        >
+          About Us
+        </a>
+        <a
+          className="pl-4 links"
+          href="https://github.com/SierraSystems/secure-file-storage"
+        >
+          GitHub
+        </a>
+      </nav>
+      <p
+        class="main-heading"
+      >
+        Secure File Upload & Storage
+      </p>
+    </div>
+  </div>,
+  <div
+    class="spacing"
+  >
+    <h1
+      class="sub-heading head"
+    >
+      Welcome to Secure File Upload & Storage
+    </h1>
+    <p
+      class="text head"
+    >
+      The Secure File Upload & Storage allows you to securely upload and store files on an S3 compatible storage bucket.
+    </p>
   </div>,
   <br />,
-  <h2>
-    NTT Data Secure File Upload
-  </h2>,
-  <div>
+  <div
+    className="spacing"
+    style={
+      Object {
+        "margin": "auto",
+        "width": "60%",
+      }
+    }
+  >
     <div
-      className="App"
+      className="filepond--wrapper"
     >
-      <div
-        className="filepond--wrapper"
-      >
-        <input
-          multiple={true}
-          type="file"
-        />
-      </div>
+      <input
+        multiple={true}
+        type="file"
+      />
     </div>
   </div>,
 ]

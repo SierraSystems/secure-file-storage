@@ -1,18 +1,33 @@
 import React from "react";
-import { Collapse, Navbar, Nav, NavbarText } from "reactstrap";
 import "./NavBar.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 export default function NavBar() {
   return (
-    <div className="nav-div">
-      <Navbar expand="md">
-        <Collapse isOpen navbar>
-          <Nav className="mr-auto" navbar>
-            <NavbarText>Secure File Upload</NavbarText>
-          </Nav>
-        </Collapse>
-      </Navbar>
+    <div className="blue">
+      <div className="spacing">
+        <nav className="navbar navbar-expand-md sticky-top">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="https://ca.nttdata.com/en/">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/s3.svg`}
+                height="40px"
+                width="55px"
+              />
+            </a>
+          </div>
+          <a className="links" href="https://ca.nttdata.com/en/">
+            About Us
+          </a>
+          <a
+            className="pl-4 links"
+            href="https://github.com/SierraSystems/secure-file-storage"
+          >
+            GitHub
+          </a>
+        </nav>
+        <p class="main-heading">Secure File Upload & Storage</p>
+      </div>
     </div>
   );
 }
