@@ -11,13 +11,14 @@ exports[`NavBar Component renders as expected 1`] = `
       className="navbar navbar-expand-md sticky-top"
     >
       <div
-        class="container-fluid"
+        className="container-fluid"
       >
         <a
-          class="navbar-brand"
+          className="navbar-brand"
           href="https://ca.nttdata.com/en/"
         >
           <img
+            alt="s3 logo"
             height="40px"
             src="undefined/images/s3.svg"
             width="55px"
@@ -38,7 +39,7 @@ exports[`NavBar Component renders as expected 1`] = `
       </a>
     </nav>
     <p
-      class="main-heading"
+      className="main-heading"
     >
       Secure File Upload & Storage
     </p>

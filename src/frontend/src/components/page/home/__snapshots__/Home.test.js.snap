@@ -12,13 +12,14 @@ Array [
         className="navbar navbar-expand-md sticky-top"
       >
         <div
-          class="container-fluid"
+          className="container-fluid"
         >
           <a
-            class="navbar-brand"
+            className="navbar-brand"
             href="https://ca.nttdata.com/en/"
           >
             <img
+              alt="s3 logo"
               height="40px"
               src="undefined/images/s3.svg"
               width="55px"
@@ -39,22 +40,22 @@ Array [
         </a>
       </nav>
       <p
-        class="main-heading"
+        className="main-heading"
       >
         Secure File Upload & Storage
       </p>
     </div>
   </div>,
   <div
-    class="spacing"
+    className="spacing"
   >
     <h1
-      class="sub-heading head"
+      className="sub-heading head"
     >
       Welcome to Secure File Upload & Storage
     </h1>
     <p
-      class="text head"
+      className="text head"
     >
       The Secure File Upload & Storage allows you to securely upload and store files on an S3 compatible storage bucket.
     </p>

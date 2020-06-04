@@ -2,15 +2,15 @@
 
 exports[`Heading Component renders as expected 1`] = `
 <div
-  class="spacing"
+  className="spacing"
 >
   <h1
-    class="sub-heading head"
+    className="sub-heading head"
   >
     Welcome to Secure File Upload & Storage
   </h1>
   <p
-    class="text head"
+    className="text head"
   >
     The Secure File Upload & Storage allows you to securely upload and store files on an S3 compatible storage bucket.
   </p>
