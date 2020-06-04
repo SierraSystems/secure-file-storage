@@ -16,7 +16,6 @@ import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 export const uploadFile = (file, load, error) => {
-  console.log("it is being called");
   axios
     .put(`/demo-bucket/${file.name}`, file, {
       headers: {
@@ -26,8 +25,6 @@ export const uploadFile = (file, load, error) => {
     .then(response => {
       if (response.status >= 200 && response.status < 300) {
         load(response.config.data.name);
-      } else {
-        error("An error occurred with the upload. Please try again.");
       }
     })
     .catch(() => {

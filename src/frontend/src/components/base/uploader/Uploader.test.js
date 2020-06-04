@@ -29,4 +29,14 @@ describe("Uploader", () => {
       );
     });
   });
+
+  test("Upload file function calls load when axios call returns a status code in success range", async () => {
+    mock.onPut("/demo-bucket/test.png", file).reply(200);
+
+    uploadFile(file, load, error);
+
+    await wait(() => {
+      expect(load).toHaveBeenCalled();
+    });
+  });
 });
