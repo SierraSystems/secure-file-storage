@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import "bootstrap/dist/css/bootstrap.css";
-import { NavBar } from "./NavBar";
+import Heading from "./Heading";
 
-storiesOf("NavBar", module).add("default", () => <NavBar />);
+storiesOf("Heading", module).add("default", () => <Heading />);
