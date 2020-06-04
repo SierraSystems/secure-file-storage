@@ -15,27 +15,31 @@ import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
+const uploadFile = (file, load, error) => {
+  axios
+    .put(`http://localhost:4572/demo-bucket/${file.name}`, file, {
+      headers: {
+        "Content-Type": file.type
+      }
+    })
+    .then(response => {
+      if (response.status >= 200 && response.status < 300) {
+        load(response.config.data.name);
+      } else {
+        error("An error occurred with the upload. Please try again.");
+      }
+    })
+    .catch(err => {
+      throw new Error("An error occurred with the upload: ", err);
+    });
+};
+
 export default function Uploader() {
   const [files, setFiles] = useState([]);
 
   const server = {
     process: (fieldName, file, metadata, load, error, progress, abort) => {
-      axios
-        .put(`http://localhost:4572/demo-bucket/${file.name}`, file, {
-          headers: {
-            "Content-Type": file.type
-          }
-        })
-        .then(response => {
-          if (response.status >= 200 && response.status < 300) {
-            load(response.config.data.name);
-          } else {
-            error("An error occurred with the upload. Please try again.");
-          }
-        })
-        .catch(err => {
-          throw new Error("An error occurred with the upload: ", err);
-        });
+      uploadFile(file, load, error);
 
       return {
         abort: () => {
