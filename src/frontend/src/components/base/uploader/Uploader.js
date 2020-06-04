@@ -20,12 +20,11 @@ export default function Uploader() {
 
   const server = {
     process: (fieldName, file, metadata, load, error, progress, abort) => {
+      console.log(file);
       axios
-        .put("http://localhost:4572/demo-bucket/test.png", file, {
+        .put(`http://localhost:4572/demo-bucket/${file.name}`, file, {
           headers: {
-            "Content-Type": file.type,
-            Authorization:
-              "AWS4-HMAC-SHA256 Credential=123/20200603/us-east-1/execute-api/aws4_request, SignedHeaders=host;x-amz-date, Signature=66e07c453bb659e4a43b2a2f17bc6b656100e7c65925ab72a520aa9702f56056"
+            "Content-Type": file.type
           }
         })
         .then(response => {
