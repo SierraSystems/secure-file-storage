@@ -1,9 +1,9 @@
 import React from "react";
-import { NavBar } from "./NavBar";
+import Heading from "./Heading";
 import testBasicSnapshot from "../../../TestHelper";
 
-describe("NavBar", () => {
+describe("Heading", () => {
   test("Component renders as expected", () => {
-    testBasicSnapshot(<NavBar />);
+    testBasicSnapshot(<Heading />);
   });
 });

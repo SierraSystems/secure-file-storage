@@ -20,6 +20,7 @@ module.exports = {
   ignorePatterns: ["node_modules/", "build/"],
   rules: {
     "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
     "react/jsx-filename-extension": "off",
     "react/jsx-curly-brace-presence": "off",
     "prettier/prettier": ["error"]

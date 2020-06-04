@@ -2,25 +2,43 @@
 
 exports[`NavBar Component renders as expected 1`] = `
 <div
-  className="nav-div"
+  className="blue spacing"
 >
   <nav
-    className="navbar navbar-expand-md"
+    className="navbar navbar-expand-md sticky-top"
   >
     <div
-      className="collapse show navbar-collapse"
-      style={Object {}}
+      className="container-fluid"
     >
-      <ul
-        className="mr-auto navbar-nav"
+      <a
+        className="navbar-brand"
+        href="https://ca.nttdata.com/en/"
       >
-        <span
-          className="navbar-text"
-        >
-          Secure File Upload
-        </span>
-      </ul>
+        <img
+          alt="s3 logo"
+          height="40px"
+          src="undefined/images/s3.svg"
+          width="55px"
+        />
+      </a>
     </div>
+    <a
+      className="links"
+      href="https://ca.nttdata.com/en/"
+    >
+      About Us
+    </a>
+    <a
+      className="pl-4 links"
+      href="https://github.com/SierraSystems/secure-file-storage"
+    >
+      GitHub
+    </a>
   </nav>
+  <p
+    className="main-heading"
+  >
+    Secure File Upload & Storage
+  </p>
 </div>
 `;

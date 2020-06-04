@@ -1,9 +1,17 @@
-.nav-div {
-  background-color: #cccccc;
+.links {
+  width: 100px;
+  color: #ffffff !important;
 }
 
-@media only screen and (max-width: 768px) {
-  .nav-div {
-    padding-left: 3em;
-  }
+.blue {
+  background-color: #2d3047 !important;
+  min-height: 210px;
+}
+
+.main-heading {
+  color: #ffffff !important;
+  padding-left: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 35px;
 }
