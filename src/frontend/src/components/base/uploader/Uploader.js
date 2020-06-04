@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+
 // Import React FilePond
 import { FilePond, registerPlugin } from "react-filepond";
 
@@ -13,8 +15,40 @@ import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
+export const uploadFile = (file, load, error) => {
+  axios
+    .put(`/demo-bucket/${file.name}`, file, {
+      headers: {
+        "Content-Type": file.type
+      }
+    })
+    .then(response => {
+      if (response.status >= 200 && response.status < 300) {
+        load(response.config.data.name);
+      }
+    })
+    .catch(() => {
+      error("An error occurred with the upload. Please try again.");
+    });
+};
+
 export default function Uploader() {
   const [files, setFiles] = useState([]);
+
+  const server = {
+    process: (fieldName, file, metadata, load, error, progress, abort) => {
+      uploadFile(file, load, error);
+
+      return {
+        abort: () => {
+          abort();
+        }
+      };
+    },
+    revert: () => {
+      // need an endpoint to delete file from s3 storage
+    }
+  };
 
   return (
     <div className="App">
@@ -23,6 +57,7 @@ export default function Uploader() {
         allowMultiple
         onupdatefiles={setFiles}
         labelIdle='Drag and Drop your files or <span class="filepond--label-action">Browse</span>'
+        server={server}
       />
     </div>
   );
