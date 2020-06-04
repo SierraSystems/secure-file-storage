@@ -1,12 +1,6 @@
 import React from "react";
 import axios from "axios";
-import {
-  render,
-  fireEvent,
-  getAllByRole,
-  getByText,
-  wait
-} from "@testing-library/react";
+import { wait } from "@testing-library/react";
 import Uploader, { uploadFile } from "./Uploader";
 import testBasicSnapshot from "../../../TestHelper";
 
