@@ -20,7 +20,6 @@ export default function Uploader() {
 
   const server = {
     process: (fieldName, file, metadata, load, error, progress, abort) => {
-      console.log(file);
       axios
         .put(`http://localhost:4572/demo-bucket/${file.name}`, file, {
           headers: {
