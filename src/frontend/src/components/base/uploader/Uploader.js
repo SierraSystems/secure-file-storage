@@ -18,7 +18,7 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 export default function Uploader() {
   const [files, setFiles] = useState([]);
 
-  let server = {
+  const server = {
     process: (fieldName, file, metadata, load, error, progress, abort) => {
       axios
         .put("http://localhost:4572/demo-bucket/test.png", file, {
@@ -35,8 +35,8 @@ export default function Uploader() {
             error("An error occurred with the upload. Please try again.");
           }
         })
-        .catch(error => {
-          console.log(error);
+        .catch(err => {
+          throw new Error("An error occurred with the upload: ", err);
         });
 
       return {
@@ -45,7 +45,7 @@ export default function Uploader() {
         }
       };
     },
-    revert: (uniqueFileId, load, error) => {
+    revert: () => {
       // need an endpoint to delete file from s3 storage
     }
   };
