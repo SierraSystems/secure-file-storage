@@ -27,7 +27,7 @@ export default function NavBar() {
             GitHub
           </a>
         </nav>
-        <p class="main-heading">Secure File Upload & Storage</p>
+        <p className="main-heading">Secure File Upload & Storage</p>
       </div>
     </div>
   );
