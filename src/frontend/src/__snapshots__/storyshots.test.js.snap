@@ -20,48 +20,44 @@ exports[`Storyshots Heading default 1`] = `
 exports[`Storyshots Home default 1`] = `
 Array [
   <div
-    className="blue"
+    className="blue spacing"
   >
-    <div
-      className="spacing"
+    <nav
+      className="navbar navbar-expand-md sticky-top"
     >
-      <nav
-        className="navbar navbar-expand-md sticky-top"
+      <div
+        className="container-fluid"
       >
-        <div
-          className="container-fluid"
-        >
-          <a
-            className="navbar-brand"
-            href="https://ca.nttdata.com/en/"
-          >
-            <img
-              alt="s3 logo"
-              height="40px"
-              src="undefined/images/s3.svg"
-              width="55px"
-            />
-          </a>
-        </div>
         <a
-          className="links"
+          className="navbar-brand"
           href="https://ca.nttdata.com/en/"
         >
-          About Us
+          <img
+            alt="s3 logo"
+            height="40px"
+            src="undefined/images/s3.svg"
+            width="55px"
+          />
         </a>
-        <a
-          className="pl-4 links"
-          href="https://github.com/SierraSystems/secure-file-storage"
-        >
-          GitHub
-        </a>
-      </nav>
-      <p
-        className="main-heading"
+      </div>
+      <a
+        className="links"
+        href="https://ca.nttdata.com/en/"
       >
-        Secure File Upload & Storage
-      </p>
-    </div>
+        About Us
+      </a>
+      <a
+        className="pl-4 links"
+        href="https://github.com/SierraSystems/secure-file-storage"
+      >
+        GitHub
+      </a>
+    </nav>
+    <p
+      className="main-heading"
+    >
+      Secure File Upload & Storage
+    </p>
   </div>,
   <div
     className="spacing"
@@ -101,48 +97,44 @@ Array [
 
 exports[`Storyshots NavBar default 1`] = `
 <div
-  className="blue"
+  className="blue spacing"
 >
-  <div
-    className="spacing"
+  <nav
+    className="navbar navbar-expand-md sticky-top"
   >
-    <nav
-      className="navbar navbar-expand-md sticky-top"
+    <div
+      className="container-fluid"
     >
-      <div
-        className="container-fluid"
-      >
-        <a
-          className="navbar-brand"
-          href="https://ca.nttdata.com/en/"
-        >
-          <img
-            alt="s3 logo"
-            height="40px"
-            src="undefined/images/s3.svg"
-            width="55px"
-          />
-        </a>
-      </div>
       <a
-        className="links"
+        className="navbar-brand"
         href="https://ca.nttdata.com/en/"
       >
-        About Us
+        <img
+          alt="s3 logo"
+          height="40px"
+          src="undefined/images/s3.svg"
+          width="55px"
+        />
       </a>
-      <a
-        className="pl-4 links"
-        href="https://github.com/SierraSystems/secure-file-storage"
-      >
-        GitHub
-      </a>
-    </nav>
-    <p
-      className="main-heading"
+    </div>
+    <a
+      className="links"
+      href="https://ca.nttdata.com/en/"
     >
-      Secure File Upload & Storage
-    </p>
-  </div>
+      About Us
+    </a>
+    <a
+      className="pl-4 links"
+      href="https://github.com/SierraSystems/secure-file-storage"
+    >
+      GitHub
+    </a>
+  </nav>
+  <p
+    className="main-heading"
+  >
+    Secure File Upload & Storage
+  </p>
 </div>
 `;
 
