@@ -1,3 +1,3 @@
-# jag-bcsc-auth-service
+# auth-service
 
-BCSC Auth service (eCRC microservice) by Ministry of Justice
+BCSC Auth service by Ministry of Justice
