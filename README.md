@@ -2,6 +2,12 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/bfeb6197269135e0fa52/maintainability)](https://codeclimate.com/github/SierraSystems/secure-file-storage/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/bfeb6197269135e0fa52/test_coverage)](https://codeclimate.com/github/SierraSystems/secure-file-storage/test_coverage)
 
+### Homepage
+![ui](https://user-images.githubusercontent.com/28017034/83820290-2631a080-a681-11ea-8c97-1cb112963a79.PNG)
+
+### Post Upload
+![postupload](https://user-images.githubusercontent.com/28017034/83820288-25990a00-a681-11ea-8f4c-bb646d422076.PNG)
+
 ## Running the App Locally
 
 ```bash
