@@ -4,9 +4,17 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: s3
-        uri: ${S3_BASE_PATH:http://localhost:4572}
-        predicates:
-        - Path=/store/**
-        filters:
-        - StripPrefix=1
+        - id: s3
+          uri: ${S3_BASE_PATH:http://localhost:4572}
+          predicates:
+            - Path=/store/**
+          filters:
+            - StripPrefix=1
+aws:
+  access:
+    key:
+      id: ${AWS_S3_ACCESS_KEY:123}
+      secret: ${AWS_S3_SECRET_KEY:xyz}
+  region: ${AWS_S3_REGION:us-east-2}
+  s3:
+    bucket: ${AWS_S3_BUCKET_NAME:demo-bucket}
