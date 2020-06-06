@@ -4,7 +4,7 @@ import axios from "axios";
 import queryString from "query-string";
 import "./Login.css";
 import "bootstrap/dist/css/bootstrap.css";
-import { Button } from "../../base/button/Button";
+import { BcscButton } from "../../base/bcscbutton/BcscButton";
 import Uploader from "../../base/uploader/Uploader";
 import { isAuthenticated } from "../../../AuthenticationHelper";
 
@@ -16,7 +16,7 @@ const basicAuth = {
   }
 };
 
-export const redirectUser = loginUrl => {
+export const redirectUser = () => {
   window.open(loginUrl, "_self");
 };
 
@@ -64,17 +64,7 @@ export const Login = () => {
 
   return (
     <>
-      {!code && (
-        <div className="outline">
-          <div className="center-align">
-            <Button
-              onClick={() => redirectUser(loginUrl)}
-              label="Login with a BC Services Card"
-              style="login_bcsc"
-            />
-          </div>
-        </div>
-      )}
+      {!code && <BcscButton onClick={redirectUser} />}
       {authed && <Uploader />}
     </>
   );
