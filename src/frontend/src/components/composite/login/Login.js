@@ -18,11 +18,27 @@ const basicAuth = {
   }
 };
 
-const authMessage = message => (
-  <div className="spacing">
-    <p className="text head">{message}</p>
-  </div>
-);
+const authMessageAndComponent = (message, authed, redirectUser) => {
+  let component = authed ? (
+    <>
+      <UserInfo />
+      <br />
+      <Uploader />
+    </>
+  ) : (
+    <BcscButton onClick={redirectUser} />
+  );
+
+  return (
+    <>
+      <div className="spacing">
+        <p className="text head">{message}</p>
+      </div>
+      <br />
+      {component}
+    </>
+  );
+};
 
 export const redirectUser = () => {
   window.open(loginUrl, "_self");
@@ -73,27 +89,13 @@ export const Login = () => {
     } else {
       loginUrl = generateRedirectUrl();
     }
-  });
+  }, [authed, message]);
 
   return (
     <>
-      {!code && (
-        <>
-          {authMessage(message)}
-          <br />
-          <BcscButton onClick={redirectUser} />
-        </>
-      )}
+      {!code && authMessageAndComponent(message, authed, redirectUser)}
       {code && !authed && <Loader />}
-      {authed && (
-        <>
-          {authMessage(message)}
-          <br />
-          <UserInfo />
-          <br />
-          <Uploader />
-        </>
-      )}
+      {authed && authMessageAndComponent(message, authed, redirectUser)}
     </>
   );
 };
