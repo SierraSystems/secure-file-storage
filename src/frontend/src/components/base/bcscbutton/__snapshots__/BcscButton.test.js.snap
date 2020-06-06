@@ -9,6 +9,7 @@ exports[`BcscButton Component renders as expected 1`] = `
   >
     <button
       className="login_bcsc btn"
+      onClick={[MockFunction]}
       type="button"
     >
       Login with a BC Services Card

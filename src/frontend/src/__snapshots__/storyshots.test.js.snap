@@ -9,6 +9,7 @@ exports[`Storyshots BcscButton default 1`] = `
   >
     <button
       className="login_bcsc btn"
+      onClick={[Function]}
       type="button"
     >
       Login with a BC Services Card
