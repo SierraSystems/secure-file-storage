@@ -19,7 +19,7 @@ const basicAuth = {
 };
 
 const authMessageAndComponent = (message, authed, redirectUser) => {
-  let component = authed ? (
+  const component = authed ? (
     <>
       <UserInfo />
       <br />
