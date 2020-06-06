@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+
 let validator;
 
 if (window.REACT_APP_JWT_VALIDATOR) {
@@ -30,7 +31,6 @@ export function isAuthenticated() {
     if (err) {
       isAuthed = false;
     } else {
-      console.log(decoded);
       saveUserInfo(decoded.userInfo);
     }
   });

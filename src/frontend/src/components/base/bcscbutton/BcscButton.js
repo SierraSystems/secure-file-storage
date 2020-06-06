@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./BcscButton.css";
 
 export const BcscButton = ({ onClick }) => (
@@ -10,3 +11,7 @@ export const BcscButton = ({ onClick }) => (
     </div>
   </div>
 );
+
+BcscButton.propTypes = {
+  onClick: PropTypes.func.isRequired
+};
