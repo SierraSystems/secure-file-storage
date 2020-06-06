@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { BcscButton } from "../../base/bcscbutton/BcscButton";
 import Uploader from "../../base/uploader/Uploader";
 import { isAuthenticated } from "../../../AuthenticationHelper";
+import Loader from "../../base/loader/Loader";
 
 let loginUrl;
 const basicAuth = {
@@ -64,8 +65,9 @@ export const Login = () => {
 
   return (
     <>
-      {!code && <BcscButton onClick={redirectUser} />}
-      {authed && <Uploader />}
+      {/* {!code && <BcscButton onClick={redirectUser} />}
+      {code && !authed && <Loader />} */}
+      {!authed && <Uploader />}
     </>
   );
 };

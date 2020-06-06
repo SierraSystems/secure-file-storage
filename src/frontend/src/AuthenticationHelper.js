@@ -11,18 +11,14 @@ export function isAuthenticated() {
   const token = sessionStorage.getItem("jwt");
   let isAuthed = true;
 
-  console.log("validator", validator);
-  console.log(token);
-
   if (!token || !validator) return false;
 
-  console.log(token);
-
   // verify a token symmetric
-  jwt.verify(token, validator, err => {
+  jwt.verify(token, validator, (err, decoded) => {
     if (err) {
-      console.log(err);
       isAuthed = false;
+    } else {
+      sessionStorage.setItem("userInfo", decoded.userInfo);
     }
   });
 
