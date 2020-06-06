@@ -89,7 +89,7 @@ export const Login = () => {
     } else {
       loginUrl = generateRedirectUrl();
     }
-  }, [authed, message]);
+  }, [authed, message, code, history, location.pathname]);
 
   return (
     <>
