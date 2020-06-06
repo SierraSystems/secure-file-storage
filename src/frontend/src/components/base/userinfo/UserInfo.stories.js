@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import "bootstrap/dist/css/bootstrap.css";
-import { BcscButton } from "./BcscButton";
+import UserInfo from "./UserInfo";
 
-storiesOf("BcscButton", module).add("default", () => <BcscButton />);
+storiesOf("UserInfo", module).add("default", () => <UserInfo />);

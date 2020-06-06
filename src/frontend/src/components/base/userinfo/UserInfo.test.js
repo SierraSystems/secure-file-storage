@@ -1,9 +1,9 @@
 import React from "react";
-import { BcscButton } from "./BcscButton";
+import UserInfo from "./UserInfo";
 import testBasicSnapshot from "../../../TestHelper";
 
-describe("BcscButton", () => {
+describe("UserInfo", () => {
   test("Component renders as expected", () => {
-    testBasicSnapshot(<BcscButton />);
+    testBasicSnapshot(<UserInfo />);
   });
 });

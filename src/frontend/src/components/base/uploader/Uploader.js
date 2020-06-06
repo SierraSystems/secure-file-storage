@@ -60,20 +60,14 @@ export default function Uploader() {
   };
 
   return (
-    <>
-      <div className="spacing">
-        <p className="head">Heyllosjhhdhsjgdssg</p>
-      </div>
-      <br />
-      <div className="spacing" style={{ width: "60%", margin: "auto" }}>
-        <FilePond
-          files={files}
-          allowMultiple
-          onupdatefiles={setFiles}
-          labelIdle='Drag and Drop your files or <span class="filepond--label-action">Browse</span>'
-          server={server}
-        />
-      </div>
-    </>
+    <div className="spacing" style={{ width: "60%", margin: "auto" }}>
+      <FilePond
+        files={files}
+        allowMultiple
+        onupdatefiles={setFiles}
+        labelIdle='Drag and Drop your files or <span class="filepond--label-action">Browse</span>'
+        server={server}
+      />
+    </div>
   );
 }

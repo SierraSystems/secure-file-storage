@@ -12,8 +12,6 @@ export default function Home() {
       {/* Heading */}
       <Heading />
 
-      <br />
-
       <Login />
     </>
   );

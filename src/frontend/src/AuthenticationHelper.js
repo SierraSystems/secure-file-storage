@@ -7,6 +7,18 @@ if (window.REACT_APP_JWT_VALIDATOR) {
   validator = process.env.REACT_APP_JWT_VALIDATOR;
 }
 
+export function saveUserInfo(userInfo) {
+  if (!userInfo) return;
+
+  sessionStorage.setItem("displayName", userInfo.display_name);
+  sessionStorage.setItem("birthdate", userInfo.birthdate);
+  sessionStorage.setItem("gender", userInfo.gender);
+  sessionStorage.setItem(
+    "address",
+    `${userInfo.address.street_address}, ${userInfo.address.locality}, ${userInfo.address.region}, ${userInfo.address.country}`
+  );
+}
+
 export function isAuthenticated() {
   const token = sessionStorage.getItem("jwt");
   let isAuthed = true;
@@ -18,7 +30,8 @@ export function isAuthenticated() {
     if (err) {
       isAuthed = false;
     } else {
-      sessionStorage.setItem("userInfo", decoded.userInfo);
+      console.log(decoded);
+      saveUserInfo(decoded.userInfo);
     }
   });
 
