@@ -50,29 +50,36 @@ Array [
     >
       Welcome to Secure File Upload & Storage
     </h1>
+    <br />
     <p
       className="text head"
     >
       The Secure File Upload & Storage allows you to securely upload and store files on an S3 compatible storage bucket.
     </p>
   </div>,
-  <br />,
   <div
     className="spacing"
-    style={
-      Object {
-        "margin": "auto",
-        "width": "60%",
-      }
-    }
+  >
+    <p
+      className="text head"
+    >
+      Please login using your BC Services Card to use the service. Click the button below to log in.
+    </p>
+  </div>,
+  <br />,
+  <div
+    className="outline"
   >
     <div
-      className="filepond--wrapper"
+      className="center-align"
     >
-      <input
-        multiple={true}
-        type="file"
-      />
+      <button
+        className="login_bcsc btn"
+        onClick={[Function]}
+        type="button"
+      >
+        Login with a BC Services Card
+      </button>
     </div>
   </div>,
 ]

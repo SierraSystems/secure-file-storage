@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots BcscButton default 1`] = `
+<div
+  className="outline"
+>
+  <div
+    className="center-align"
+  >
+    <button
+      className="login_bcsc btn"
+      type="button"
+    >
+      Login with a BC Services Card
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Heading default 1`] = `
 <div
   className="spacing"
@@ -9,6 +26,7 @@ exports[`Storyshots Heading default 1`] = `
   >
     Welcome to Secure File Upload & Storage
   </h1>
+  <br />
   <p
     className="text head"
   >
@@ -17,82 +35,16 @@ exports[`Storyshots Heading default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Home default 1`] = `
-Array [
+exports[`Storyshots Loader default 1`] = `
+<div
+  className="loader-align"
+>
   <div
-    className="blue spacing"
-  >
-    <nav
-      className="navbar navbar-expand-md sticky-top"
-    >
-      <div
-        className="container-fluid"
-      >
-        <a
-          className="navbar-brand"
-          href="https://ca.nttdata.com/en/"
-        >
-          <img
-            alt="s3 logo"
-            height="40px"
-            src="undefined/images/s3.svg"
-            width="55px"
-          />
-        </a>
-      </div>
-      <a
-        className="links"
-        href="https://ca.nttdata.com/en/"
-      >
-        About Us
-      </a>
-      <a
-        className="pl-4 links"
-        href="https://github.com/SierraSystems/secure-file-storage"
-      >
-        GitHub
-      </a>
-    </nav>
-    <p
-      className="main-heading"
-    >
-      Secure File Upload & Storage
-    </p>
-  </div>,
-  <div
-    className="spacing"
-  >
-    <h1
-      className="sub-heading head"
-    >
-      Welcome to Secure File Upload & Storage
-    </h1>
-    <p
-      className="text head"
-    >
-      The Secure File Upload & Storage allows you to securely upload and store files on an S3 compatible storage bucket.
-    </p>
-  </div>,
-  <br />,
-  <div
-    className="spacing"
-    style={
-      Object {
-        "margin": "auto",
-        "width": "60%",
-      }
-    }
-  >
-    <div
-      className="filepond--wrapper"
-    >
-      <input
-        multiple={true}
-        type="file"
-      />
-    </div>
-  </div>,
-]
+    className="page-loader"
+  />
+  <br />
+  Loading... Please Wait
+</div>
 `;
 
 exports[`Storyshots NavBar default 1`] = `
@@ -156,5 +108,40 @@ exports[`Storyshots Uploader default 1`] = `
       type="file"
     />
   </div>
+</div>
+`;
+
+exports[`Storyshots UserInfo default 1`] = `
+<div
+  className="spacing"
+>
+  <p
+    className="head"
+  >
+    <b>
+      Name: 
+    </b>
+  </p>
+  <p
+    className="head"
+  >
+    <b>
+      Birthdate: 
+    </b>
+  </p>
+  <p
+    className="head"
+  >
+    <b>
+      Gender: 
+    </b>
+  </p>
+  <p
+    className="head"
+  >
+    <b>
+      Address: 
+    </b>
+  </p>
 </div>
 `;
