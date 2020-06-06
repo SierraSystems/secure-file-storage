@@ -32,11 +32,20 @@ export const uploadFile = (file, load, error) => {
     });
 };
 
+export const deleteFile = (uniqueFileId, error) => {
+  axios
+    .delete(`/demo-bucket/${uniqueFileId}`)
+    .then(() => {})
+    .catch(() => {
+      error("An error occurred with the delete. Please try again.");
+    });
+};
+
 export default function Uploader() {
   const [files, setFiles] = useState([]);
 
   const server = {
-    process: (fieldName, file, metadata, load, error, progress, abort) => {
+    process: (_1, file, _3, load, error, _6, abort) => {
       uploadFile(file, load, error);
 
       return {
@@ -45,8 +54,8 @@ export default function Uploader() {
         }
       };
     },
-    revert: () => {
-      // need an endpoint to delete file from s3 storage
+    revert: (uniqueFileId, _, error) => {
+      deleteFile(uniqueFileId, error);
     }
   };
 
