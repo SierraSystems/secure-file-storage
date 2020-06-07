@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { BcscButton } from "../../base/bcscbutton/BcscButton";
 import Loader from "../../base/loader/Loader";
 import Uploader from "../../base/uploader/Uploader";
-import { isAuthenticated } from "../../../AuthenticationHelper";
+import { isAuthenticated } from "../../../modules/AuthenticationHelper";
 import UserInfo from "../../base/userinfo/UserInfo";
 
 let loginUrl;

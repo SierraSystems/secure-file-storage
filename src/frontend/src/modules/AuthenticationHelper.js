@@ -8,6 +8,8 @@ if (window.REACT_APP_JWT_VALIDATOR) {
   validator = process.env.REACT_APP_JWT_VALIDATOR;
 }
 
+sessionStorage.setItem("validator", validator);
+
 export function saveUserInfo(userInfo) {
   if (!userInfo) return;
 
@@ -24,10 +26,10 @@ export function isAuthenticated() {
   const token = sessionStorage.getItem("jwt");
   let isAuthed = true;
 
-  if (!token || !validator) return false;
+  if (!token || !sessionStorage.getItem("validator")) return false;
 
   // verify a token symmetric
-  jwt.verify(token, validator, (err, decoded) => {
+  jwt.verify(token, sessionStorage.getItem("validator"), (err, decoded) => {
     if (err) {
       isAuthed = false;
     } else {
