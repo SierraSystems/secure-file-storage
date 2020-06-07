@@ -1,7 +1,7 @@
-import { redirectUser, loginUser, generateRedirectUrl } from "./Login";
 import { createMemoryHistory } from "history";
 import axios from "axios";
 import { wait } from "@testing-library/react";
+import { redirectUser, loginUser, generateRedirectUrl } from "./Login";
 
 const MockAdapter = require("axios-mock-adapter");
 
