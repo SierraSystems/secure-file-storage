@@ -69,6 +69,12 @@ Go to [http://localhost:8055](http://localhost:8055) to check that the bucket ha
 
 5. You should see your image in postman
 
+## AWS S3 Encryption
+
+An important part of this project is to ensure that we can not only upload files to S3, but do so in a secure fashion. For this, we require our uploaded files to be encrypted. AWS S3 provides default encryption on buckets to satisfy this requirement.
+
+Amazon S3 default encryption provides a way to set the default encryption behavior for an S3 bucket. You can set default encryption on a bucket so that all new objects are encrypted when they are stored in the bucket. When you use server-side encryption, Amazon S3 encrypts an object before saving it to disk and decrypts it when you download the objects.
+
 ## Resources
 
 - [How to fake AWS locally with LocalStack](https://dev.to/goodidea/how-to-fake-aws-locally-with-localstack-27me)
@@ -76,3 +82,5 @@ Go to [http://localhost:8055](http://localhost:8055) to check that the bucket ha
 - [Testing file uploads to AWS S3 with IAM user credentials in Postman](https://medium.com/@christinavhastenrath/testing-file-uploads-to-aws-s3-with-iam-user-credentials-in-postman-5026fbde3ca6)
 
 - [Filepond documentation](https://pqina.nl/filepond/docs/patterns/api/server/#advanced)
+
+- [AWS S3 Encryption](https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html)
