@@ -7,7 +7,6 @@ import testBasicSnapshot from "../../../TestHelper";
 const MockAdapter = require("axios-mock-adapter");
 
 describe("Uploader", () => {
-  // This sets the mock adapter on the default instance
   let mock;
 
   beforeEach(() => {

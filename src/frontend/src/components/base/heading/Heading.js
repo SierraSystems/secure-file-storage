@@ -8,6 +8,7 @@ export default function Heading() {
       <h1 className="sub-heading head">
         Welcome to Secure File Upload & Storage
       </h1>
+      <br />
       <p className="text head">
         The Secure File Upload & Storage allows you to securely upload and store
         files on an S3 compatible storage bucket.

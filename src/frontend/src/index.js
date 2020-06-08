@@ -14,6 +14,18 @@ if (window.REACT_APP_API_BASE_URL) {
   axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 }
 
+if (window.REACT_APP_BASIC_AUTH_USERNAME) {
+  sessionStorage.setItem("username", window.REACT_APP_BASIC_AUTH_USERNAME);
+} else if (process.env.REACT_APP_BASIC_AUTH_USERNAME) {
+  sessionStorage.setItem("username", process.env.REACT_APP_BASIC_AUTH_USERNAME);
+}
+
+if (window.REACT_APP_BASIC_AUTH_PASSWORD) {
+  sessionStorage.setItem("password", window.REACT_APP_BASIC_AUTH_PASSWORD);
+} else if (process.env.REACT_APP_BASIC_AUTH_PASSWORD) {
+  sessionStorage.setItem("password", process.env.REACT_APP_BASIC_AUTH_PASSWORD);
+}
+
 ReactDOM.render(
   <BrowserRouter>
     <App />

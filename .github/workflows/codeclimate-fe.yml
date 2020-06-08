@@ -8,7 +8,7 @@ jobs:
       matrix:
         platform: [ubuntu-latest]
         node: ["12"]
-    name: test/node ${{ matrix.node }}/${{ matrix.platform }}
+    name: tests
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@master

@@ -6,8 +6,11 @@ export default function App() {
   return (
     <div>
       <Switch>
-        <Redirect exact from="/" to="/securefileupload" />
-        <Route exact path="/securefileupload">
+        <Redirect exact from="/" to="/securefileupload/applicationform" />
+        <Route
+          exact
+          path="/(criminalrecordcheck/applicationform|securefileupload/applicationform)"
+        >
           <Home />
         </Route>
       </Switch>
