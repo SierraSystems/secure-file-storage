@@ -1,10 +1,9 @@
 package com.nttdata.securefilestorageapi.service.impl;
 
 
-import com.amazonaws.services.s3.model.CannedAccessControlList;
-import com.amazonaws.services.s3.model.DeleteObjectRequest;
-import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.nttdata.securefilestorageapi.service.AmazonS3ClientService;
+import com.amazonaws.services.s3.model.*;
+import com.amazonaws.util.IOUtils;
+import com.nttdata.securefilestorageapi.service.SecureFileService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,16 +21,18 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
-public class AmazonS3ClientServiceImpl implements AmazonS3ClientService
+public class SecureFileServiceImpl implements SecureFileService
 {
     private String awsS3Bucket;
     private AmazonS3 amazonS3;
-    private static final Logger logger = LoggerFactory.getLogger(AmazonS3ClientServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(SecureFileServiceImpl.class);
 
     @Autowired
-    public AmazonS3ClientServiceImpl(Region awsRegion, AWSCredentialsProvider awsCredentialsProvider, String awsS3Bucket)
+    public SecureFileServiceImpl(Region awsRegion, AWSCredentialsProvider awsCredentialsProvider, String awsS3Bucket)
     {
         this.amazonS3 = AmazonS3ClientBuilder.standard()
                 .withCredentials(awsCredentialsProvider)
@@ -40,7 +41,7 @@ public class AmazonS3ClientServiceImpl implements AmazonS3ClientService
     }
 
     @Async
-    public void uploadFileToS3Bucket(MultipartFile multipartFile, boolean enablePublicReadAccess)
+    public void uploadFile(MultipartFile multipartFile, boolean enablePublicReadAccess)
     {
         String fileName = multipartFile.getOriginalFilename();
 
@@ -65,12 +66,31 @@ public class AmazonS3ClientServiceImpl implements AmazonS3ClientService
     }
 
     @Async
-    public void deleteFileFromS3Bucket(String fileName)
+    public void deleteFile(String fileName)
     {
         try {
             amazonS3.deleteObject(new DeleteObjectRequest(awsS3Bucket, fileName));
         } catch (AmazonServiceException ex) {
             logger.error("error [" + ex.getMessage() + "] occurred while removing [" + fileName + "] ");
         }
+    }
+
+    @Async
+    public byte[] getFile(String fileName)
+    {
+        byte[] content = null;
+        try {
+            logger.info("Downloading an object with key= " + fileName);
+            final S3Object s3Object = amazonS3.getObject(awsS3Bucket, fileName);
+            final S3ObjectInputStream stream = s3Object.getObjectContent();
+
+            content = IOUtils.toByteArray(stream);
+            logger.info("File downloaded successfully.");
+            s3Object.close();
+
+        } catch(final IOException ex) {
+            logger.info("IO Error Message= " + ex.getMessage());
+        }
+        return content;
     }
 }
