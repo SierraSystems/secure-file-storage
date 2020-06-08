@@ -76,3 +76,5 @@ Go to [http://localhost:8055](http://localhost:8055) to check that the bucket ha
 - [Testing file uploads to AWS S3 with IAM user credentials in Postman](https://medium.com/@christinavhastenrath/testing-file-uploads-to-aws-s3-with-iam-user-credentials-in-postman-5026fbde3ca6)
 
 - [Filepond documentation](https://pqina.nl/filepond/docs/patterns/api/server/#advanced)
+
+- [AWS S3 Encryption](https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html)
