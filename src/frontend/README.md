@@ -2,6 +2,12 @@
 
 Welcome to the frontend!
 
+### Environment Variables
+
+In order to ensure the app runs successfully, you will be required to set some environment variables as specified in the `.env.example` file. Please setup a `.env.development` file for local dev and populate the fields shown with the appropriate values.
+
+Replace `<Base_url_of_backend_api>` with the url of the S3 backend api (for example: http://localhost:4000).
+
 ## Running the Frontend
 
 In the project directory (`frontend`), you can run:

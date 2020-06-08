@@ -9,6 +9,7 @@ exports[`Heading Component renders as expected 1`] = `
   >
     Welcome to Secure File Upload & Storage
   </h1>
+  <br />
   <p
     className="text head"
   >
