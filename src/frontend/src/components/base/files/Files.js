@@ -39,7 +39,7 @@ export const getFile = (file, setSource) => {
       const newSourceArr = [...sourceArr];
       setSource(newSourceArr);
     })
-    .catch(err => {
+    .catch(() => {
       throw new Error(`Error getting file ${file}`);
     });
 };
@@ -62,13 +62,13 @@ export const imageComponent = (source, file) => {
   ));
 };
 
-export const fileNameComponent = (file, getFile, setSource) => {
+export const fileNameComponent = (file, getFileFunc, setSource) => {
   return (
     <div className="box">
       <p className="floatleft">{file}</p>
       <button
         className="floatright"
-        onClick={() => getFile(file, setSource)}
+        onClick={() => getFileFunc(file, setSource)}
         type="button"
       >
         Get
