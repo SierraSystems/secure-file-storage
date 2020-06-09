@@ -18,7 +18,7 @@ const basicAuth = {
   }
 };
 
-const authMessageAndComponent = (message, authed, redirectUser) => {
+const authMessageAndComponent = (authed, redirectUser) => {
   const component = authed ? (
     <>
       <UserInfo />
@@ -31,9 +31,6 @@ const authMessageAndComponent = (message, authed, redirectUser) => {
 
   return (
     <>
-      <div className="spacing">
-        <p className="text head">{message}</p>
-      </div>
       <br />
       {component}
     </>
@@ -55,7 +52,7 @@ export const generateRedirectUrl = () => {
   return loginUrl;
 };
 
-export const loginUser = (code, setAuthed, setMessage, path, history) => {
+export const loginUser = (code, setAuthed, path, history) => {
   if (isAuthenticated()) {
     setAuthed(true);
     return;
@@ -65,12 +62,7 @@ export const loginUser = (code, setAuthed, setMessage, path, history) => {
     .get(`http://localhost:8080/oauth/login?code=${code}`, basicAuth)
     .then(response => {
       sessionStorage.setItem("jwt", response.data);
-      if (isAuthenticated()) {
-        setAuthed(true);
-        setMessage(
-          "You have been securely authenticated. Your information is presented below. Enjoy using the service!"
-        );
-      }
+      if (isAuthenticated()) setAuthed(true);
     })
     .catch(() => {
       sessionStorage.clear();
@@ -80,27 +72,21 @@ export const loginUser = (code, setAuthed, setMessage, path, history) => {
 
 export const Login = () => {
   const [authed, setAuthed] = useState(false);
-  const [message, setMessage] = useState(
-    "Please login using your BC Services Card to use the service. Click the button below to log in."
-  );
   const history = useHistory();
   const location = useLocation();
   const urlParam = queryString.parse(location.search);
   const { code } = urlParam;
 
   useEffect(() => {
-    if (code && !authed) {
-      loginUser(code, setAuthed, setMessage, location.pathname, history);
-    } else {
-      loginUrl = generateRedirectUrl();
-    }
-  }, [authed, message, code, history, location.pathname]);
+    if (code && !authed) loginUser(code, setAuthed, location.pathname, history);
+    else loginUrl = generateRedirectUrl();
+  }, [authed, code, history, location.pathname]);
 
   return (
     <>
-      {!code && authMessageAndComponent(message, authed, redirectUser)}
+      {!code && authMessageAndComponent(authed, redirectUser)}
       {code && !authed && <Loader />}
-      {authed && authMessageAndComponent(message, authed, redirectUser)}
+      {authed && authMessageAndComponent(authed, redirectUser)}
     </>
   );
 };

@@ -18,12 +18,10 @@ import "./Uploader.css";
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 export const uploadFile = (file, load, error) => {
+  const formData = new FormData();
+  formData.append("file", file);
   axios
-    .put(`/demo-bucket/${file.name}`, file, {
-      headers: {
-        "Content-Type": file.type
-      }
-    })
+    .post(`http://localhost:8085/files`, formData)
     .then(response => {
       if (response.status >= 200 && response.status < 300) {
         load(response.config.data.name);
