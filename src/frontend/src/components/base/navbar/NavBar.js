@@ -2,7 +2,7 @@ import React from "react";
 import "./NavBar.css";
 import "bootstrap/dist/css/bootstrap.css";
 
-export const NavBar = () => (
+export const NavBar = ({ onGetClick, onUploadClick, isDownload }) => (
   <div className="blue spacing">
     <nav className="navbar navbar-expand-md sticky-top">
       <div className="container-fluid">
@@ -14,6 +14,16 @@ export const NavBar = () => (
             alt="s3 logo"
           />
         </a>
+        {!isDownload && (
+          <span className="links" onClick={onGetClick}>
+            Get Files
+          </span>
+        )}
+        {isDownload && (
+          <span className="links" onClick={onUploadClick}>
+            Upload
+          </span>
+        )}
       </div>
     </nav>
     <p className="main-heading">Secure File Upload & Storage</p>

@@ -56,6 +56,11 @@ export const generateRedirectUrl = () => {
 };
 
 export const loginUser = (code, setAuthed, setMessage, path, history) => {
+  if (isAuthenticated()) {
+    setAuthed(true);
+    return;
+  }
+
   axios
     .get(`http://localhost:8080/oauth/login?code=${code}`, basicAuth)
     .then(response => {
