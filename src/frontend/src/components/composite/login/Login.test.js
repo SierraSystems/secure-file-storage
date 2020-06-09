@@ -11,7 +11,6 @@ describe("Login", () => {
   let mock;
   const code = "abc123";
   const setAuthed = jest.fn();
-  const setMessage = jest.fn();
   const path = "/securefileupload/applicationform";
   const history = createMemoryHistory();
 
