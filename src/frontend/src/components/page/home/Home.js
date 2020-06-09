@@ -27,8 +27,8 @@ export default function Home() {
         isDownload={shouldShowGetFiles}
       />
       <Heading />
-      {!shouldShowGetFiles && <Login />}
-      {shouldShowGetFiles && <Download />}
+      {shouldShowGetFiles && <Login />}
+      {!shouldShowGetFiles && <Download />}
     </>
   );
 }
