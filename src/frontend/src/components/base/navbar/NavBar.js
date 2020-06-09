@@ -21,8 +21,9 @@ export const NavBar = ({ onGetClick, onUploadClick, isDownload }) => (
             onClick={onGetClick}
             onKeyDown={onGetClick}
             role="button"
+            tabIndex="0"
           >
-            Get Files
+            > Get Files
           </span>
         )}
         {isDownload && (
@@ -31,8 +32,9 @@ export const NavBar = ({ onGetClick, onUploadClick, isDownload }) => (
             onClick={onUploadClick}
             onKeyDown={onUploadClick}
             role="button"
+            tabIndex="0"
           >
-            Upload
+            > Upload
           </span>
         )}
       </div>
