@@ -2,8 +2,22 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Files.css";
+const fp = require("lodash/fp");
 
 const sourceArr = [];
+
+export const areDuplicates = (arr, obj) => {
+  let duplicate = false;
+
+  arr.forEach(element => {
+    if (fp.isEqual(element, obj)) {
+      console.log("duplicate");
+      duplicate = true;
+    }
+  });
+
+  return duplicate;
+};
 
 export const getFile = (file, setSource) => {
   axios
@@ -21,7 +35,9 @@ export const getFile = (file, setSource) => {
       const sourceObj = {};
       const key = file;
       sourceObj[key] = "data:;base64," + base64;
-      sourceArr.push(sourceObj);
+
+      if (!areDuplicates(sourceArr, sourceObj)) sourceArr.push(sourceObj);
+
       const newSourceArr = [...sourceArr];
       setSource(newSourceArr);
     })
