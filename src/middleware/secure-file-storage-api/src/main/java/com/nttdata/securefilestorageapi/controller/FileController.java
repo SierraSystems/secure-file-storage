@@ -8,16 +8,17 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/files")
+@CrossOrigin(origins = {"${allowed.origins}"})
 public class FileController {
 
     @Autowired
     private SecureFileService secureFileService;
 
-    @PostMapping
+    @PostMapping(value="/files")
     public Map<String, String> uploadFile(@RequestPart(value = "file") MultipartFile file)
     {
         this.secureFileService.uploadFile(file, false);
@@ -28,28 +29,35 @@ public class FileController {
         return response;
     }
 
-    @DeleteMapping
-    public Map<String, String> deleteFile(@RequestParam("file_name") String fileName)
+    @DeleteMapping(value="/files/{filename:.+}")
+    public Map<String, String> deleteFile(@PathVariable String filename)
     {
-        this.secureFileService.deleteFile(fileName);
+        this.secureFileService.deleteFile(filename);
 
         Map<String, String> response = new HashMap<>();
-        response.put("message", "file [" + fileName + "] removing request submitted successfully.");
+        response.put("message", "file [" + filename + "] removing request submitted successfully.");
 
         return response;
     }
 
-    @GetMapping
-    public ResponseEntity<ByteArrayResource> getFile(@RequestParam("file_name") String fileName)
+    @GetMapping(value="/files/{filename:.+}")
+    public ResponseEntity<ByteArrayResource> getFile(@PathVariable String filename)
     {
-        final byte[] data = this.secureFileService.getFile(fileName);
+        final byte[] data = this.secureFileService.getFile(filename);
 
         final ByteArrayResource resource = new ByteArrayResource(data);
         return ResponseEntity
                 .ok()
                 .contentLength(data.length)
                 .header("Content-type", "application/octet-stream")
-                .header("Content-disposition", "attachment; filename=\"" + fileName + "\"")
+                .header("Content-disposition", "attachment; filename=\"" + filename + "\"")
                 .body(resource);
+    }
+
+    @GetMapping(value="/files")
+    public List<String> getFileNames()
+    {
+        List<String> fileNames = this.secureFileService.getFileNames();
+        return fileNames;
     }
 }

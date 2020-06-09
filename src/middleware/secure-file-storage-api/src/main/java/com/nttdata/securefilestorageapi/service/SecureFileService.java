@@ -10,4 +10,5 @@ public interface SecureFileService {
     void uploadFile(MultipartFile multipartFile, boolean enablePublicReadAccess);
     void deleteFile(String fileName);
     byte[] getFile(String fileName);
+    List<String> getFileNames();
 }
