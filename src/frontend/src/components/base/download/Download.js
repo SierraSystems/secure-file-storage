@@ -15,10 +15,10 @@ export const getFile = setSource => {
           ""
         )
       );
-      setSource("data:;base64," + base64);
+      setSource(`data:;base64,${base64}`);
     })
     .catch(err => {
-      console.log(err);
+      throw new Error("Error getting file", err);
     });
 };
 
@@ -31,12 +31,9 @@ export const Download = () => {
 
     axios
       .get(`http://localhost:8085/files`)
-      .then(response => {
-        console.log(response);
-        setFiles(response.data);
-      })
+      .then(response => setFiles(response.data))
       .catch(err => {
-        console.log(err);
+        throw new Error("Error getting all files", err);
       });
   }, [files]);
 
