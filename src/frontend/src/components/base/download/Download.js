@@ -3,40 +3,7 @@ import axios from "axios";
 import { Files } from "../files/Files";
 import "bootstrap/dist/css/bootstrap.css";
 
-export const getFile = setSource => {
-  axios
-    .get(`http://localhost:8085/files/naramata.jpg`, {
-      responseType: "arraybuffer"
-    })
-    .then(response => {
-      const base64 = btoa(
-        new Uint8Array(response.data).reduce(
-          (data, byte) => data + String.fromCharCode(byte),
-          ""
-        )
-      );
-      setSource(`data:;base64,${base64}`);
-    })
-    .catch(err => {
-      throw new Error("Error getting file", err);
-    });
-};
-
 export const Download = () => {
-  const [files, setFiles] = useState([]);
-  const [source, setSource] = useState(null);
-
-  useEffect(() => {
-    if (files) return;
-
-    axios
-      .get(`http://localhost:8085/files`)
-      .then(response => setFiles(response.data))
-      .catch(err => {
-        throw new Error("Error getting all files", err);
-      });
-  }, [files]);
-
   return (
     <div className="spacing">
       <p className="text head">Select a file to retrieve from S3:</p>

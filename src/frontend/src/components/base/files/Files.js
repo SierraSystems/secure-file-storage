@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Files.css";
+
 const fp = require("lodash/fp");
 
 const sourceArr = [];
@@ -10,10 +11,7 @@ export const areDuplicates = (arr, obj) => {
   let duplicate = false;
 
   arr.forEach(element => {
-    if (fp.isEqual(element, obj)) {
-      console.log("duplicate");
-      duplicate = true;
-    }
+    if (fp.isEqual(element, obj)) duplicate = true;
   });
 
   return duplicate;
@@ -34,7 +32,7 @@ export const getFile = (file, setSource) => {
 
       const sourceObj = {};
       const key = file;
-      sourceObj[key] = "data:;base64," + base64;
+      sourceObj[key] = `data:;base64,${base64}`;
 
       if (!areDuplicates(sourceArr, sourceObj)) sourceArr.push(sourceObj);
 
@@ -42,7 +40,7 @@ export const getFile = (file, setSource) => {
       setSource(newSourceArr);
     })
     .catch(err => {
-      console.log(err);
+      throw new Error(`Error getting file ${file}`, err);
     });
 };
 
@@ -55,11 +53,9 @@ export const Files = () => {
 
     axios
       .get(`http://localhost:8085/files`)
-      .then(response => {
-        setFiles(response.data);
-      })
+      .then(response => setFiles(response.data))
       .catch(err => {
-        console.log(err);
+        throw new Error("Error getting all files", err);
       });
   }, [files]);
 
@@ -72,6 +68,7 @@ export const Files = () => {
             <button
               className="floatright"
               onClick={() => getFile(file, setSource)}
+              type="button"
             >
               Get
             </button>
@@ -85,6 +82,7 @@ export const Files = () => {
                       src={sourceObj[`${file}`]}
                       width="100%"
                       height="100%"
+                      alt={file}
                     />
                     <br />
                   </>
