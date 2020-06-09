@@ -44,6 +44,39 @@ export const getFile = (file, setSource) => {
     });
 };
 
+export const imageComponent = (source, file) => {
+  return source.map(sourceObj => (
+    <>
+      {sourceObj[`${file}`] && (
+        <>
+          <img
+            src={sourceObj[`${file}`]}
+            width="100%"
+            height="100%"
+            alt={file}
+          />
+          <br />
+        </>
+      )}
+    </>
+  ));
+};
+
+export const fileNameComponent = (file, getFile, setSource) => {
+  return (
+    <div className="box">
+      <p className="floatleft">{file}</p>
+      <button
+        className="floatright"
+        onClick={() => getFile(file, setSource)}
+        type="button"
+      >
+        Get
+      </button>
+    </div>
+  );
+};
+
 export const Files = () => {
   const [files, setFiles] = useState([]);
   const [source, setSource] = useState(null);
@@ -63,32 +96,8 @@ export const Files = () => {
     <div className="head">
       {files.map(file => (
         <div key={file}>
-          <div className="box">
-            <p className="floatleft">{file}</p>
-            <button
-              className="floatright"
-              onClick={() => getFile(file, setSource)}
-              type="button"
-            >
-              Get
-            </button>
-          </div>
-          {source &&
-            source.map(sourceObj => (
-              <>
-                {sourceObj[`${file}`] && (
-                  <>
-                    <img
-                      src={sourceObj[`${file}`]}
-                      width="100%"
-                      height="100%"
-                      alt={file}
-                    />
-                    <br />
-                  </>
-                )}
-              </>
-            ))}
+          {fileNameComponent(file, getFile, setSource)}
+          {source && <>{imageComponent(source, file)}</>}
           <br />
         </div>
       ))}
