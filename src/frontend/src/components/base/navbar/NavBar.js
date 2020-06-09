@@ -23,7 +23,7 @@ export const NavBar = ({ onGetClick, onUploadClick, isDownload }) => (
             role="button"
             tabIndex="0"
           >
-            > Get Files
+            Get Files
           </span>
         )}
         {isDownload && (
@@ -34,7 +34,7 @@ export const NavBar = ({ onGetClick, onUploadClick, isDownload }) => (
             role="button"
             tabIndex="0"
           >
-            > Upload
+            Upload
           </span>
         )}
       </div>
