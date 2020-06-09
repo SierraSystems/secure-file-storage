@@ -93,4 +93,16 @@ public class SecureFileServiceImpl implements SecureFileService
         }
         return content;
     }
+
+    @Async
+    public List<String> getFileNames()
+    {
+        ObjectListing objectListing = amazonS3.listObjects(awsS3Bucket);
+        List<String> files = new ArrayList<String>();
+        for(S3ObjectSummary os : objectListing.getObjectSummaries()) {
+            files.add(os.getKey());
+        }
+
+        return files;
+    }
 }
