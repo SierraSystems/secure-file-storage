@@ -11,7 +11,6 @@ export default function Home() {
   const [shouldShowGetFiles, setShouldShowGetFiles] = useState(false);
 
   const showGetFiles = () => {
-    console.log("in here?");
     if (isAuthenticated()) setShouldShowGetFiles(true);
     else alert.error("Please authenticate to use the service.");
   };

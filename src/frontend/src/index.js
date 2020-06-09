@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import "react-app-polyfill/ie11";
 import "react-app-polyfill/stable";
 import React from "react";
