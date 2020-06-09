@@ -32,7 +32,7 @@ describe("Login", () => {
 
     mock.onGet(`http://localhost:8080/oauth/login?code=${code}`).reply(400);
 
-    loginUser(code, setAuthed, setMessage, path, history);
+    loginUser(code, setAuthed, path, history);
 
     await wait(() => {
       expect(sessionStorage.getItem("jwt")).toBeFalsy();
@@ -44,7 +44,7 @@ describe("Login", () => {
       .onGet(`http://localhost:8080/oauth/login?code=${code}`)
       .reply(200, "token123");
 
-    loginUser(code, setAuthed, setMessage, path, history);
+    loginUser(code, setAuthed, path, history);
 
     await wait(() => {
       expect(sessionStorage.getItem("jwt")).toEqual("token123");

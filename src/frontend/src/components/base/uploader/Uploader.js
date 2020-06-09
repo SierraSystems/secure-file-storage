@@ -20,6 +20,7 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 export const uploadFile = (file, load, error) => {
   const formData = new FormData();
   formData.append("file", file);
+
   axios
     .post(`http://localhost:8085/files`, formData)
     .then(response => {
@@ -34,7 +35,7 @@ export const uploadFile = (file, load, error) => {
 
 export const deleteFile = (uniqueFileId, error) => {
   axios
-    .delete(`/demo-bucket/${uniqueFileId}`)
+    .delete(`http://localhost:8085/files/${uniqueFileId}`)
     .then(() => {})
     .catch(() => {
       error("An error occurred with the delete. Please try again.");

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Download Component renders as expected 1`] = `
+<div
+  className="spacing"
+>
+  <p
+    className="text head"
+  >
+    Select a file to retrieve from S3:
+  </p>
+  <br />
+  <div
+    className="head"
+  />
+</div>
+`;
