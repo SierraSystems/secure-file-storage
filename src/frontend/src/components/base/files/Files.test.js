@@ -17,22 +17,20 @@ describe("Files", () => {
   const setSource = jest.fn();
   const getFile = jest.fn();
   const source = [{ "test.png": "byte" }];
+  const arr = [{ key1: "val1" }, { key2: "val2" }];
+  const obj = { key1: "val1" };
 
   test("areDuplicates function returns true when two objects are same", async () => {
-    const arr = [{ key1: "val1" }, { key2: "val2" }];
-    const obj = { key1: "val1" };
-
     await wait(() => {
       expect(areDuplicates(arr, obj)).toEqual(true);
     });
   });
 
   test("areDuplicates function returns false when two objects are not the same", async () => {
-    const arr = [{ key1: "val1" }, { key2: "val2" }];
-    const obj = { key1: "val4" };
+    const newObj = { ...obj, key1: "val4" };
 
     await wait(() => {
-      expect(areDuplicates(arr, obj)).toEqual(false);
+      expect(areDuplicates(arr, newObj)).toEqual(false);
     });
   });
 
