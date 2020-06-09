@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = {"${allowed.origins}"})
 public class FileController {
 
     @Autowired
