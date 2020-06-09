@@ -40,7 +40,7 @@ export const getFile = (file, setSource) => {
       setSource(newSourceArr);
     })
     .catch(err => {
-      throw new Error(`Error getting file ${file}`, err);
+      throw new Error(`Error getting file ${file}`);
     });
 };
 
