@@ -18,7 +18,7 @@ const basicAuth = {
   }
 };
 
-const authMessageAndComponent = (authed, redirectUser) => {
+export const authMessageAndComponent = (authed, redirectUser) => {
   const component = authed ? (
     <>
       <UserInfo />

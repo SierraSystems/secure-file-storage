@@ -18,6 +18,22 @@ exports[`Storyshots BcscButton default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Download default 1`] = `
+<div
+  className="spacing"
+>
+  <p
+    className="text head"
+  >
+    Select a file to retrieve from S3:
+  </p>
+  <br />
+  <div
+    className="head"
+  />
+</div>
+`;
+
 exports[`Storyshots Heading default 1`] = `
 <div
   className="spacing"
