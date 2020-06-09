@@ -15,15 +15,6 @@ export const NavBar = () => (
           />
         </a>
       </div>
-      <a className="links" href="https://ca.nttdata.com/en/">
-        About Us
-      </a>
-      <a
-        className="pl-4 links"
-        href="https://github.com/SierraSystems/secure-file-storage"
-      >
-        GitHub
-      </a>
     </nav>
     <p className="main-heading">Secure File Upload & Storage</p>
   </div>

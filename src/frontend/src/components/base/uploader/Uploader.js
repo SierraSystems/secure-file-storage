@@ -12,6 +12,8 @@ import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orien
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 
+import "./Uploader.css";
+
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
@@ -60,7 +62,7 @@ export default function Uploader() {
   };
 
   return (
-    <div className="spacing" style={{ width: "60%", margin: "auto" }}>
+    <div className="spacing custom-width">
       <FilePond
         files={files}
         allowMultiple
