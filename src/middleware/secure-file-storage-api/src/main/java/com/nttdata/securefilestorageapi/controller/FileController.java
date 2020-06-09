@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@CrossOrigin("http://localhost:3085")
+@CrossOrigin(origins = {"${allowed.origins}"})
 public class FileController {
 
     @Autowired
