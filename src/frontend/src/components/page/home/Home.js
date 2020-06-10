@@ -33,7 +33,7 @@ export default function Home({ alert }) {
 }
 
 Home.propTypes = {
-  alert: PropTypes.any.shape({
+  alert: PropTypes.shape({
     error: PropTypes.func.isRequired
   }).isRequired
 };
