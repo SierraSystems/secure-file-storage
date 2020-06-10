@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { useAlert } from "react-alert";
 import { NavBar } from "../../base/navbar/NavBar";
 import Heading from "../../base/heading/Heading";
 import { Download } from "../../base/download/Download";
 import { Login } from "../../composite/login/Login";
 import { isAuthenticated } from "../../../modules/AuthenticationHelper";
 
-export default function Home() {
-  const alert = useAlert();
+export default function Home({ alert }) {
   const [shouldShowGetFiles, setShouldShowGetFiles] = useState(false);
 
   const showGetFiles = () => {

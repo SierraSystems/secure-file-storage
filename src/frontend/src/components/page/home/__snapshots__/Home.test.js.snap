@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Component renders as expected 1`] = `
+Array [
+  <div
+    className="blue spacing"
+  >
+    <nav
+      className="navbar navbar-expand-md sticky-top"
+    >
+      <div
+        className="container-fluid"
+      >
+        <a
+          className="navbar-brand"
+          href="https://ca.nttdata.com/en/"
+        >
+          <img
+            alt="s3 logo"
+            height="40px"
+            src="undefined/images/s3.svg"
+            width="55px"
+          />
+        </a>
+        <span
+          className="links"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          Get Files
+        </span>
+      </div>
+    </nav>
+    <p
+      className="main-heading"
+    >
+      Secure File Upload & Storage
+    </p>
+  </div>,
+  <div
+    className="spacing"
+  >
+    <h1
+      className="sub-heading head"
+    >
+      Welcome to Secure File Upload & Storage
+    </h1>
+    <br />
+    <p
+      className="text head"
+    >
+      The Secure File Upload & Storage allows you to securely upload and store files on an S3 compatible storage bucket.
+    </p>
+  </div>,
+  <br />,
+  <div
+    className="outline"
+  >
+    <div
+      className="center-align"
+    >
+      <button
+        className="login_bcsc btn"
+        onClick={[Function]}
+        type="button"
+      >
+        Login with a BC Services Card
+      </button>
+    </div>
+  </div>,
+]
+`;
