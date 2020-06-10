@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { NavBar } from "../../base/navbar/NavBar";
 import Heading from "../../base/heading/Heading";
 import { Download } from "../../base/download/Download";
@@ -30,3 +31,9 @@ export default function Home({ alert }) {
     </>
   );
 }
+
+Home.propTypes = {
+  alert: PropTypes.any.shape({
+    error: PropTypes.func.isRequired
+  }).isRequired
+};
