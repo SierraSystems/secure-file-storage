@@ -65,7 +65,9 @@ export const imageComponent = (source, file) => {
 export const fileNameComponent = (file, getFileFunc, setSource) => {
   return (
     <div className="box">
-      <p className="floatleft">{file}</p>
+      <p className="floatleft">
+        {file.length > 20 ? `${file.slice(0, 20)}...` : file}
+      </p>
       <button
         className="floatright"
         onClick={() => getFileFunc(file, setSource)}
