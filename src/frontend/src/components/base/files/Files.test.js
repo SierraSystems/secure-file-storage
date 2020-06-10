@@ -10,7 +10,7 @@ describe("Files", () => {
 
   beforeEach(() => {
     mock = new MockAdapter(axios);
-    mock.onGet("http://localhost:8085/files").reply(200, ["test.png"]);
+    mock.onGet("/files").reply(200, ["test.png"]);
   });
 
   const file = "test.png";

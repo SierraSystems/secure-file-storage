@@ -19,7 +19,7 @@ export const areDuplicates = (arr, obj) => {
 
 export const getFile = (file, setSource) => {
   axios
-    .get(`http://localhost:8085/files/${file}`, {
+    .get(`/files/${file}`, {
       responseType: "arraybuffer"
     })
     .then(response => {
@@ -85,7 +85,7 @@ export const Files = () => {
     if (files.length > 0) return;
 
     axios
-      .get(`http://localhost:8085/files`)
+      .get(`/files`)
       .then(response => setFiles(response.data))
       .catch(err => {
         throw new Error("Error getting all files", err);

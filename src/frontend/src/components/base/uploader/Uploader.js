@@ -22,7 +22,7 @@ export const uploadFile = (file, load, error) => {
   formData.append("file", file);
 
   axios
-    .post(`http://localhost:8085/files`, formData)
+    .post(`/files`, formData)
     .then(response => {
       if (response.status >= 200 && response.status < 300) {
         load(response.config.data.name);
@@ -35,7 +35,7 @@ export const uploadFile = (file, load, error) => {
 
 export const deleteFile = (uniqueFileId, error) => {
   axios
-    .delete(`http://localhost:8085/files/${uniqueFileId}`)
+    .delete(`/files/${uniqueFileId}`)
     .then(() => {})
     .catch(() => {
       error("An error occurred with the delete. Please try again.");
