@@ -1,15 +1,10 @@
 server:
   port: ${SERVER_PORT:8080}
 spring:
-  cloud:
-    gateway:
-      routes:
-        - id: s3
-          uri: ${S3_BASE_PATH:http://localhost:4572}
-          predicates:
-            - Path=/store/**
-          filters:
-            - StripPrefix=1
+  servlet:
+    multipart:
+      maxFileSize: 30MB
+      maxRequestSize: 30MB
 aws:
   access:
     key:
