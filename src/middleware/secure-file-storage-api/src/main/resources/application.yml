@@ -1,10 +1,10 @@
 server:
   port: ${SERVER_PORT:8080}
 spring:
-  http:
+  servlet:
     multipart:
-      max-file-size: 30MB
-      max-request-size: 30MB
+      maxFileSize: 30MB
+      maxRequestSize: 30MB
 aws:
   access:
     key:
