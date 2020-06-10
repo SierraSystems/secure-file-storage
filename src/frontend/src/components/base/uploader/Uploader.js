@@ -12,16 +12,17 @@ import FilePondPluginImageExifOrientation from "filepond-plugin-image-exif-orien
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 
+import "./Uploader.css";
+
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
 export const uploadFile = (file, load, error) => {
+  const formData = new FormData();
+  formData.append("file", file);
+
   axios
-    .put(`/demo-bucket/${file.name}`, file, {
-      headers: {
-        "Content-Type": file.type
-      }
-    })
+    .post(`/files`, formData)
     .then(response => {
       if (response.status >= 200 && response.status < 300) {
         load(response.config.data.name);
@@ -34,7 +35,7 @@ export const uploadFile = (file, load, error) => {
 
 export const deleteFile = (uniqueFileId, error) => {
   axios
-    .delete(`/demo-bucket/${uniqueFileId}`)
+    .delete(`/files/${uniqueFileId}`)
     .then(() => {})
     .catch(() => {
       error("An error occurred with the delete. Please try again.");
@@ -60,7 +61,7 @@ export default function Uploader() {
   };
 
   return (
-    <div className="spacing" style={{ width: "60%", margin: "auto" }}>
+    <div className="spacing custom-width">
       <FilePond
         files={files}
         allowMultiple

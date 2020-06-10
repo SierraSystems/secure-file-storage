@@ -18,6 +18,22 @@ exports[`Storyshots BcscButton default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Download default 1`] = `
+<div
+  className="spacing"
+>
+  <p
+    className="text head"
+  >
+    Select a file to retrieve from S3:
+  </p>
+  <br />
+  <div
+    className="head"
+  />
+</div>
+`;
+
 exports[`Storyshots Heading default 1`] = `
 <div
   className="spacing"
@@ -48,7 +64,7 @@ exports[`Storyshots Loader default 1`] = `
 </div>
 `;
 
-exports[`Storyshots NavBar default 1`] = `
+exports[`Storyshots NavBar isDownload 1`] = `
 <div
   className="blue spacing"
 >
@@ -69,19 +85,56 @@ exports[`Storyshots NavBar default 1`] = `
           width="55px"
         />
       </a>
+      <span
+        className="links"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        Upload
+      </span>
     </div>
-    <a
-      className="links"
-      href="https://ca.nttdata.com/en/"
+  </nav>
+  <p
+    className="main-heading"
+  >
+    Secure File Upload & Storage
+  </p>
+</div>
+`;
+
+exports[`Storyshots NavBar isUpload 1`] = `
+<div
+  className="blue spacing"
+>
+  <nav
+    className="navbar navbar-expand-md sticky-top"
+  >
+    <div
+      className="container-fluid"
     >
-      About Us
-    </a>
-    <a
-      className="pl-4 links"
-      href="https://github.com/SierraSystems/secure-file-storage"
-    >
-      GitHub
-    </a>
+      <a
+        className="navbar-brand"
+        href="https://ca.nttdata.com/en/"
+      >
+        <img
+          alt="s3 logo"
+          height="40px"
+          src="undefined/images/s3.svg"
+          width="55px"
+        />
+      </a>
+      <span
+        className="links"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        Get Files
+      </span>
+    </div>
   </nav>
   <p
     className="main-heading"
@@ -93,13 +146,7 @@ exports[`Storyshots NavBar default 1`] = `
 
 exports[`Storyshots Uploader default 1`] = `
 <div
-  className="spacing"
-  style={
-    Object {
-      "margin": "auto",
-      "width": "60%",
-    }
-  }
+  className="spacing custom-width"
 >
   <div
     className="filepond--wrapper"

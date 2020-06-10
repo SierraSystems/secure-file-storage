@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login authMessageAndComponent matches a snapshot when authed 1`] = `
+Array [
+  <br />,
+  <div
+    className="spacing"
+  >
+    <p
+      className="head"
+    >
+      <b>
+        Name: 
+      </b>
+    </p>
+    <p
+      className="head"
+    >
+      <b>
+        Birthdate: 
+      </b>
+    </p>
+    <p
+      className="head"
+    >
+      <b>
+        Gender: 
+      </b>
+    </p>
+    <p
+      className="head"
+    >
+      <b>
+        Address: 
+      </b>
+    </p>
+  </div>,
+  <br />,
+  <div
+    className="spacing custom-width"
+  >
+    <div
+      className="filepond--wrapper"
+    >
+      <input
+        multiple={true}
+        type="file"
+      />
+    </div>
+  </div>,
+]
+`;
+
+exports[`Login authMessageAndComponent matches a snapshot when unauthed 1`] = `
+Array [
+  <br />,
+  <div
+    className="outline"
+  >
+    <div
+      className="center-align"
+    >
+      <button
+        className="login_bcsc btn"
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Login with a BC Services Card
+      </button>
+    </div>
+  </div>,
+]
+`;

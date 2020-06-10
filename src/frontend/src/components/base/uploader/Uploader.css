@@ -1,0 +1,12 @@
+.custom-width {
+  width: 60%;
+  margin: auto;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .custom-width {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+}

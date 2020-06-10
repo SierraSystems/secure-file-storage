@@ -1,6 +1,7 @@
 .links {
   width: 100px;
   color: #ffffff !important;
+  cursor: pointer;
 }
 
 .blue {

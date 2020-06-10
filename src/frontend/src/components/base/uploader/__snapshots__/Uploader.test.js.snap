@@ -2,13 +2,7 @@
 
 exports[`Uploader Component renders as expected 1`] = `
 <div
-  className="spacing"
-  style={
-    Object {
-      "margin": "auto",
-      "width": "60%",
-    }
-  }
+  className="spacing custom-width"
 >
   <div
     className="filepond--wrapper"

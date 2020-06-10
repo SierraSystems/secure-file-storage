@@ -16,3 +16,11 @@ code {
   padding-right: 12%;
   overflow: auto;
 }
+
+@media only screen and (max-device-width: 480px) {
+  .spacing {
+    padding-left: 0%;
+    padding-right: 0%;
+    overflow: auto;
+  }
+}

@@ -23,7 +23,7 @@ describe("Uploader", () => {
   });
 
   test("Upload file function throws an error when an axios request is unsuccessful", async () => {
-    mock.onPut(`/demo-bucket/${file.name}`, file).reply(400);
+    mock.onPost(`/files`).reply(400);
 
     uploadFile(file, load, error);
 
@@ -36,7 +36,7 @@ describe("Uploader", () => {
   });
 
   test("Upload file function calls load when axios call returns a status code in success range", async () => {
-    mock.onPut(`/demo-bucket/${file.name}`, file).reply(200);
+    mock.onPost(`/files`).reply(200);
 
     uploadFile(file, load, error);
 
@@ -46,7 +46,7 @@ describe("Uploader", () => {
   });
 
   test("Delete file function throws an error when an axios request is unsuccessful", async () => {
-    mock.onDelete(`/demo-bucket/${uniqueFileId}`).reply(400);
+    mock.onDelete(`/files/${uniqueFileId}`).reply(400);
 
     deleteFile(uniqueFileId, error);
 
@@ -59,7 +59,7 @@ describe("Uploader", () => {
   });
 
   test("Delete file function successfully unuploads the file when an axios request is successful", async () => {
-    mock.onDelete(`/demo-bucket/${uniqueFileId}`).reply(200);
+    mock.onDelete(`/files/${uniqueFileId}`).reply(200);
 
     deleteFile(uniqueFileId, error);
 

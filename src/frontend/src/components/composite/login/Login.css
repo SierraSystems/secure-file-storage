@@ -19,6 +19,13 @@
   margin: auto;
 }
 
+@media only screen and (max-device-width: 480px) {
+  .outline {
+    width: 80%;
+    margin-bottom: 50px;
+  }
+}
+
 .center-align {
   width: fit-content;
   margin: auto;

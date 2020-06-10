@@ -1,7 +1,13 @@
 import { createMemoryHistory } from "history";
 import axios from "axios";
 import { wait } from "@testing-library/react";
-import { redirectUser, loginUser, generateRedirectUrl } from "./Login";
+import {
+  redirectUser,
+  loginUser,
+  generateRedirectUrl,
+  authMessageAndComponent
+} from "./Login";
+import testBasicSnapshot from "../../../TestHelper";
 
 const MockAdapter = require("axios-mock-adapter");
 
@@ -11,7 +17,6 @@ describe("Login", () => {
   let mock;
   const code = "abc123";
   const setAuthed = jest.fn();
-  const setMessage = jest.fn();
   const path = "/securefileupload/applicationform";
   const history = createMemoryHistory();
 
@@ -32,7 +37,7 @@ describe("Login", () => {
 
     mock.onGet(`http://localhost:8080/oauth/login?code=${code}`).reply(400);
 
-    loginUser(code, setAuthed, setMessage, path, history);
+    loginUser(code, setAuthed, path, history);
 
     await wait(() => {
       expect(sessionStorage.getItem("jwt")).toBeFalsy();
@@ -44,7 +49,7 @@ describe("Login", () => {
       .onGet(`http://localhost:8080/oauth/login?code=${code}`)
       .reply(200, "token123");
 
-    loginUser(code, setAuthed, setMessage, path, history);
+    loginUser(code, setAuthed, path, history);
 
     await wait(() => {
       expect(sessionStorage.getItem("jwt")).toEqual("token123");
@@ -59,5 +64,13 @@ describe("Login", () => {
     await wait(() => {
       expect(result).toBeFalsy();
     });
+  });
+
+  test("authMessageAndComponent matches a snapshot when unauthed", () => {
+    testBasicSnapshot(authMessageAndComponent(false, jest.fn()));
+  });
+
+  test("authMessageAndComponent matches a snapshot when authed", () => {
+    testBasicSnapshot(authMessageAndComponent(true, jest.fn()));
   });
 });

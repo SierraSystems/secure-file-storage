@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Files File name component matches the snapshot 1`] = `
+<div
+  className="box"
+>
+  <p
+    className="floatleft"
+  >
+    test.png
+  </p>
+  <button
+    className="floatright"
+    onClick={[Function]}
+    type="button"
+  >
+    Get
+  </button>
+</div>
+`;
+
+exports[`Files imageComponent matches the snapshot 1`] = `
+Array [
+  <img
+    alt="test.png"
+    height="100%"
+    src="byte"
+    width="100%"
+  />,
+  <br />,
+]
+`;
